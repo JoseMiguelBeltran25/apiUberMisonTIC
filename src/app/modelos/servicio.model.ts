@@ -1,6 +1,6 @@
 export class ServicioModelo{
     id?: String;
-    fecha?: string;
+    fecha?: Date;
     hora_inicio?: string;
     hora_fin?: string;
     placa_vehiculo?: string;

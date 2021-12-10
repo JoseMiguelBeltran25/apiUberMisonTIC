@@ -1,1 +1,50 @@
-<p>create works!</p>
+<div class="container">
+    <h3 class="center-align">Registrar Servicios</h3>
+    
+    <form [formGroup]="fgValidacion" class="col s12" (ngSubmit)="store()">
+      <div class="row">
+        <div class="input-field col s4">
+          <input formControlName="fecha" type="date" class="validate">
+          <label for="fecha">Fecha</label>
+        </div>
+        <div class="input-field col s4">
+          <input formControlName="hora_inicio" type="time" class="validate">
+          <label for="hora_inicio">Hora Inicio</label>
+        </div>
+        <div class="input-field col s4">
+            <input formControlName="hora_fin" type="time" class="validate">
+            <label for="hora_fin">Hora Fin</label>
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s6">
+          <input formControlName="placa_vehiculo" type="text" class="validate">
+          <label for="placa_vehiculo">Placa Vehiculo</label>
+        </div>
+        <div class="input-field col s6">
+            <input formControlName="nombre_conductor" type="text" class="validate">
+            <label for="nombre_conductor">Nombre Conductor</label>
+        </div>
+      </div>
+
+    <div class="row">
+        <div class="input-field col s6">
+          <input formControlName="dinero_recogido" type="number" class="validate">
+          <label for="dinero_recogido">Dinero Recogido</label>
+        </div>
+        <div class="input-field col s6">
+          <select class="browser-default" formControlName="ruta" >
+            <option value="" disabled selected>Seleccione la Ruta</option>
+            <option *ngFor="let ruta of listadoRutas" value="{{ruta.origen}} - {{ruta.destino}}">{{ruta.origen}} - {{ruta.destino}}</option>
+          </select>
+        </div>
+    </div>
+
+     <div class="row center-align">
+        <button [disabled]="!fgValidacion.valid" class="btn waves-effect waves-light" type="submit" name="action">Enviar
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+    </form>
+  </div>

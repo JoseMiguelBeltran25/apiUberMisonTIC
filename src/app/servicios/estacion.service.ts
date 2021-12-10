@@ -7,7 +7,7 @@ import { SeguridadService } from './seguridad.service';
 @Injectable({
   providedIn: 'root'
 })
-export class Estacionservice {
+export class EstacionService {
 
   constructor(private http: HttpClient,
     private seguridadService: SeguridadService) {
